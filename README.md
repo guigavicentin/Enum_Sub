@@ -9,7 +9,7 @@ O SubEnum automatiza a coleta de subdomínios utilizando várias fontes e ferram
 
 Enquanto ele roda, você pode aproveitar o tempo para analisar outros vetores, preparar payloads ou tomar um café ☕. Ao final, é só validar os resultados e usar a lista com ferramentas como nmap, nuclei, nikto, entre outras.
 
-🔧 Ferramentas utilizadas
+<b>🔧 Ferramentas utilizadas</b>
 
 amass<br>
 subcat<br>
@@ -20,22 +20,23 @@ AlienVault OTX<br>
 gobuster<br>
 httpx<br>
 
-📂 Requisitos<br>
+<b>📂 Requisitos<br></b>
 Python 3
 
-Ferramentas instaladas:<br>
+<b>Ferramentas instaladas:<br></b>
 httpx<br>
 subcat<br>
 jq<br>
 curl<br>
 
-Ver comandos:<br>
+<b>Ver comandos:<br></b>
 <b>python enum_sub.py -h</b>
 ```bash
 python enum_sub.py -d domain.com -w /path-to-wordlist
 ```
+Caso não tenha uma Wordlist, não use "-w", será usada a padrão deste repositório.
 
-A Ferramenta executará:<br>
+<b>A Ferramenta executará:<br></b>
 Coleta passiva e ativa de subdomínios<br>
 Remoção de duplicados<br>
 Detecção automática de Wildcard DNS<br>
