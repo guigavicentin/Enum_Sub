@@ -2,8 +2,7 @@
 
 🕵️‍♂️ SubEnum - Subdomain Enumeration Script
 
-Ferramenta simples e poderosa para enumeração inicial de subdomínios, ideal para quem quer agilidade na fase de reconhecimento durante um Pentest ou Bug Bounty.
-
+Ferramenta simples e poderosa para enumeração inicial de subdomínios, ideal para quem quer agilidade na fase de reconhecimento durante um Pentest ou Bug Bounty.<br>
 🚀 Por que usar?
 
 O SubEnum automatiza a coleta de subdomínios utilizando várias fontes e ferramentas conhecidas, gerando uma lista consolidada para validação posterior com httpx. Tudo isso com mínima interação e focado em produtividade.
@@ -12,49 +11,26 @@ Enquanto ele roda, você pode aproveitar o tempo para analisar outros vetores, p
 
 🔧 Ferramentas utilizadas
 
-amass
+amass<br>
+subcat<br>
+shodanx<br>
+crt.sh<br>
+web.archive.org<br>
+AlienVault OTX<br>
+gobuster<br>
+httpx<br>
 
-subcat
-
-shodanx
-
-crt.sh
-
-web.archive.org
-
-AlienVault OTX
-
-gobuster
-
-httpx
-
-📂 Requisitos
-
+📂 Requisitos<br>
 Python 3
 
-Ferramentas instaladas:
+Ferramentas instaladas:<br>
+httpx<br>
+subcat<br>
+jq<br>
+curl<br>
 
-amass
-
-httpx
-
-subcat
-
-shodanx
-
-gobuster
-
-jq
-
-curl
-
-Você também precisa da wordlist de subdomínios:
-
-/caminho/diretorio/SecLists/Discovery/DNS/subdomains-top1million-110000.txt
-
-Também ajustar os caminhos das ferramentas, olhe o .py antes de usar.
-
-python3 enum_sub.py
+Ver comandos:<br>
+<b>python3 enum_sub.py -h</b>
 
 Você será solicitado a inserir o domínio (ex: target.com), e a ferramenta fará todo o trabalho:
 

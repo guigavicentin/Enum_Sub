@@ -1,6 +1,7 @@
 import subprocess
 import os
 import random
+import argparse
 
 def print_banner():
     banners = [
@@ -48,11 +49,21 @@ def run_command(cmd):
     except subprocess.CalledProcessError as e:
         print(f"Erro ao executar: {cmd}\n{e}")
 
+parser = argparse.ArgumentParser()
+parser.add_argument("--wordlist","-w", default="subdomains-top1million-110000.txt", help="Caminho para o wordlist")
+parser.add_argument("--domain", "-d", help="Domínio alvo")
+args = parser.parse_args()
+
+if args.wordlist == "default":
+    wordlist = open('subdomains-top1million-110000.txt', 'r').readlines()
+else:
+    wordlist_path = args.wordlist
+    wordlist = open(wordlist_path, 'r').readlines()
+
 def main():
     print_banner()
-    domain = input("Digite o domínio (ex: target.com): ").strip()
+    domain = args.domain
     base = domain.replace('.', '_')
-    wordlist = "/caminho/diretorio/aqui/SecLists-master/Discovery/DNS/subdomains-top1million-110000.txt"
 
     # Subdomain enum
     print("\n[+] Executando ferramentas de enumeração...")
