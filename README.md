@@ -30,7 +30,7 @@ jq<br>
 curl<br>
 
 <b>Ver comandos:<br></b>
-<b>python enum_sub.py -h</b>
+python enum_sub.py -h
 ```bash
 python enum_sub.py -d domain.com -w /path-to-wordlist
 ```
