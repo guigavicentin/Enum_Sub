@@ -2,93 +2,49 @@
 
 🕵️‍♂️ SubEnum - Subdomain Enumeration Script
 
-Ferramenta simples e poderosa para enumeração inicial de subdomínios, ideal para quem quer agilidade na fase de reconhecimento durante um Pentest ou Bug Bounty.
-
+Ferramenta simples e poderosa para enumeração inicial de subdomínios, ideal para quem quer agilidade na fase de reconhecimento durante um Pentest ou Bug Bounty.<br>
 🚀 Por que usar?
 
 O SubEnum automatiza a coleta de subdomínios utilizando várias fontes e ferramentas conhecidas, gerando uma lista consolidada para validação posterior com httpx. Tudo isso com mínima interação e focado em produtividade.
 
 Enquanto ele roda, você pode aproveitar o tempo para analisar outros vetores, preparar payloads ou tomar um café ☕. Ao final, é só validar os resultados e usar a lista com ferramentas como nmap, nuclei, nikto, entre outras.
 
-🔧 Ferramentas utilizadas
+<b>🔧 Ferramentas utilizadas</b>
 
-amass
+amass<br>
+subcat<br>
+shodanx<br>
+crt.sh<br>
+web.archive.org<br>
+AlienVault OTX<br>
+gobuster<br>
+httpx<br>
 
-subcat
-
-shodanx
-
-crt.sh
-
-web.archive.org
-
-AlienVault OTX
-
-gobuster
-
-httpx
-
-📂 Requisitos
-
+<b>📂 Requisitos<br></b>
 Python 3
 
-Ferramentas instaladas:
+<b>Ferramentas instaladas:<br></b>
+httpx<br>
+subcat<br>
+jq<br>
+curl<br>
 
-amass
+<b>Ver comandos:<br></b>
+python enum_sub.py -h
+```bash
+python enum_sub.py -d domain.com -w /path-to-wordlist
+```
+Caso não tenha uma Wordlist, não use "-w", será usada a padrão deste repositório.
 
-httpx
+<b>A Ferramenta executará:<br></b>
+Coleta passiva e ativa de subdomínios<br>
+Remoção de duplicados<br>
+Detecção automática de Wildcard DNS<br>
+Validação com httpx nas principais portas web<br>
 
-subcat
-
-shodanx
-
-gobuster
-
-jq
-
-curl
-
-Você também precisa da wordlist de subdomínios:
-
-/caminho/diretorio/SecLists/Discovery/DNS/subdomains-top1million-110000.txt
-
-Também ajustar os caminhos das ferramentas, olhe o .py antes de usar.
-
-python3 enum_sub.py
-
-Você será solicitado a inserir o domínio (ex: target.com), e a ferramenta fará todo o trabalho:
-
-Coleta passiva e ativa de subdomínios
-
-Remoção de duplicados
-
-Detecção automática de Wildcard DNS
-
-Validação com httpx nas principais portas web
-
-Ao final, você terá um arquivo com os subdomínios ativos em:
-
-httpx_target_com.txt
-
-📈 Próximos passos com os resultados 
-
-- Podendo escolher em qual .txt quer usar, cada ferramenta salva em um arquivo - Depois junto tudo em um .txt só - E no "httpx_target_com.txt" para o resultado do httpx
-
-Use o arquivo final como base para outras análises, como:
-
-nmap -iL httpx_target_com.txt -Pn -sV -T4 -oA nmap_scan ---- Talvez colocar um "-p-" também...
-
-nuclei -l httpx_target_com.txt -rl 10 -bs 2 -c 2 -as -silent -s critical,high,medium
-Combinando com TAGS talvez --- -tags tech,tech-detect (entre outras)
-
-nikto -h httpx_target_com.txt --output nikto_results.txt
+Ao final, você terá um arquivo com os subdomínios ativos em:<br>
+httpx_domain_com.txt
 
 🎯 Foco
-
 Essa ferramenta não substitui uma enumeração completa, mas é excelente para ganhar tempo na fase inicial. Ao automatizar tarefas básicas e trazer resultados de múltiplas fontes, permite ao analista focar em outras etapas enquanto ela faz o "trabalho sujo".
 
-⚠️ Aviso
-
-Use com responsabilidade.
-
-Ferramenta desenvolvida para fins educacionais e profissionais com autorização.
